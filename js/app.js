@@ -164,15 +164,19 @@ Player.prototype.resetGame = function() {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+var createEnemies = function() {
+    var numberOfEnermies = player.level;
+    var i;
+    // console.log(numberOfEnermies);
+
+    for (i = 0; i < numberOfEnermies; i++ ){
+        allEnemies.push(new Enemy( Math.ceil(Math.random() * 3)));
+    }
+};
+
 var allEnemies = [];
-var enemy = new Enemy();
-allEnemies.push(enemy);
-
-console.log(allEnemies);
-
 var player = new Player();
-console.log(player);
-
+createEnemies();
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
