@@ -8,6 +8,10 @@ var Enemy = function(rowNumber) {
     this.sprite = 'images/enemy-bug.png';
     this.x = -100;
     this.y = this.setRow(rowNumber); //1=60 2=140 3=225
+    // Set the speed – used .ceil to avoid a 0 result
+    // math.random picks a number from 0 to 1
+    // Multiply by 5 to scale to 5. 
+    // Picked 5 as 500 is fast for a bug, but not impossible to win!
     this.speed = Math.ceil((Math.random() * 5)*100);
 };
 
@@ -20,6 +24,7 @@ Enemy.prototype.update = function(dt) {
     if (this.x <= 505){
         this.x = this.x + (this.speed * dt);
     } else {
+        // resets bug position to -100
         this.x = -100;
     }
     this.collisionDetect();
@@ -111,16 +116,12 @@ Player.prototype.handleInput = function(pressedKey) {
                 this.x = this.x + 100;
             }
         break;
-        default:
-            console.log('waiting...');
-        break;
     }
-
 };
 
 Player.prototype.resetPosition = function() {
-    this.x=200;
-    this.y= 375;
+    this.x = 200;
+    this.y = 375;
     this.update();
 };
 
@@ -167,8 +168,6 @@ Player.prototype.resetGame = function() {
 var createEnemies = function() {
     var numberOfEnermies = player.level;
     var i;
-    // console.log(numberOfEnermies);
-
     for (i = 0; i < numberOfEnermies; i++ ){
         allEnemies.push(new Enemy( Math.ceil(Math.random() * 3)));
     }
