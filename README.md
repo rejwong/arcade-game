@@ -3,7 +3,8 @@
 ## Table of Contents
 * [Instructions](#instructions)
 * [Getting started](#getting-started)
-* [Notes](#notes)
+* [Background](#background)
+* [Improvement](#improvement)
 
 ## Instructions
 The files provided in Udacity's starter kit have been updated to create the arcade game. 
@@ -21,7 +22,7 @@ Clicking on the 'reset' button starts the game over.
 ## Getting started
 Download the repository and load the index.html in your browser. 
 
-## Notes
+## Background
 This project was created as part of my Udacity Front-End Nanodegree, which was awarded through a Google Developer Scholarship. 
 
 This arcade game was developed to meet the requirements of the [rubric](https://review.udacity.com/#!/projects/2696458597/rubric). This module focuses on writing functions that are **object-oriented** – either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions. 
